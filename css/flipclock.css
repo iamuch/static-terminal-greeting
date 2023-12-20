@@ -37,6 +37,8 @@
 
 /* Main */
 .flip-clock-wrapper {
+  display: flex;
+  justify-content: center;
   font: normal 11px "Helvetica Neue", Helvetica, sans-serif;
   color: #555;
   z-index: 10;
