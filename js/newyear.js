@@ -128,7 +128,7 @@ $(document).ready(function() {
 	// var futureDate  = new Date(currentDate.getFullYear() + 1, 0, 1);
 	var futureDate  = new Date(2023, 11, 22, 18, 30);
 	var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
-
+	celebrate();
 	clock = $clock.FlipClock(diff, {
 		clockFace: 'DailyCounter',
 		countdown: true,
@@ -148,7 +148,7 @@ $(document).ready(function() {
 
 function celebrate()
 {
-	$confetti.fadeIn();
+	// $confetti.fadeIn();
 	
 	$clock.removeClass('animated flipInX');
 	$clock.addClass('animated flipOutX');
@@ -156,6 +156,7 @@ function celebrate()
 	clearTimeout(timeout);
 	setTimeout(function(){
 		$message.addClass('animated flipInX').fadeIn();
+		$message.css('display', 'flex');
 		// timeout = setTimeout(bounce, interval);
 	}, 350);
 }
