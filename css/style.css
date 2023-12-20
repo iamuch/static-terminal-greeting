@@ -1,0 +1,241 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    
+}
+.message
+{
+    font-family: 'Great Vibes', cursive;
+    color: white;
+    position: absolute;
+    font-size: 95px;
+    top:50%;
+    left:0;
+    right:0;
+    bottom:0;
+    width: 100%;
+    z-index: 50;
+    margin: auto auto;
+    text-align: center;
+    display: none;
+}
+
+canvas {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    position: absolute;
+}
+
+#confetti
+{  
+    display: none;
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-webkit-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-moz-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-ms-keyframes move-clouds-back {
+    from {background-position: 0;}
+    to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    display:block;
+}
+
+.stars {
+    background:#000 url(../img/stars.png) repeat top center;
+    z-index:0;
+}
+
+.twinkling{
+    background:transparent url(../img/twinkling.png) repeat top center;
+    z-index:1;
+
+    -moz-animation:move-twink-back 200s linear infinite;
+    -ms-animation:move-twink-back 200s linear infinite;
+    -o-animation:move-twink-back 200s linear infinite;
+    -webkit-animation:move-twink-back 200s linear infinite;
+    animation:move-twink-back 200s linear infinite;
+}
+
+/* .clouds{
+    background:transparent url(../img/clouds3.png) repeat top center;
+    z-index:3;
+
+    -moz-animation:move-clouds-back 200s linear infinite;
+    -ms-animation:move-clouds-back 200s linear infinite;
+    -o-animation:move-clouds-back 200s linear infinite;
+    -webkit-animation:move-clouds-back 200s linear infinite;
+    animation:move-clouds-back 200s linear infinite;
+} */
+
+
+#terminal {
+  width: 70vw;
+  height: 65vh;
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+}
+
+#terminal__bar {
+  display: flex;
+  width: 100%;
+  height: 30px;
+  align-items: center;
+  padding: 0 8px;
+  box-sizing: border-box;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: linear-gradient(#504b45 0%,#3c3b37 100%);
+}
+
+#bar__buttons {
+  display: flex;
+  align-items: center;
+}
+
+.bar__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-right: 5px;
+  font-size: 8px;
+  height: 12px;
+  width: 12px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 100%;
+  background: linear-gradient(#7d7871 0%, #595953 100%);
+  text-shadow: 0px 1px 0px rgba(255,255,255,0.2);
+  box-shadow: 0px 0px 1px 0px #41403A, 0px 1px 1px 0px #474642;
+}
+.bar__button:hover {
+  cursor: pointer;
+}
+.bar__button:focus {
+  outline: none;
+}
+#bar__button--exit {
+  background: linear-gradient(#f37458 0%, #de4c12 100%);
+  background-clip: padding-box;
+}
+
+#bar__user {
+  color: #d5d0ce;
+  margin-left: 6px;
+  font-size: 14px;
+  line-height: 15px;
+}
+
+#terminal__body {
+  background: rgba(56, 4, 40, 0.9);
+  font-family: 'Ubuntu Mono';
+  height: calc(100% - 30px);
+  padding-top: 2px;
+  margin-top: -1px;
+}
+
+#terminal__prompt {
+  display: flex;
+}
+#terminal__prompt--user {
+  color: #7eda28;
+}
+#terminal__prompt--location {
+  color: #4878c0;
+}
+#terminal__prompt--bling {
+  color: #dddddd;
+}
+#terminal__prompt--cursor {
+  display: block;
+  height: 17px;
+  width: 8px;
+  margin-left: 9px;
+  animation: blink 1200ms linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    background: #ffffff;
+  }
+  49% {
+    background: #ffffff;
+  }
+  60% {
+    background: transparent;
+  }
+  99% {
+    background: transparent;
+  }
+  100% {
+    background: #ffffff;
+  }
+}
+
+@media (max-width: 600px) {
+  #terminal {
+    max-height: 90%;
+    width: 90%;
+  }
+}
+
+div.bash {
+    background-color: black;
+    color: white;
+    font-size: medium ; 
+    font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+    padding: 10px;
+    width: 50%;
+    margin: 0 auto;
+    text-align: left;
+    border-radius: 5px;
+    height: 400px;
+    margin-top: -200px !important;
+    border: 1px solid white;
+}
