@@ -102,8 +102,6 @@ body {
 }
 
 .App_window__cJi-a {
-  -webkit-animation: App_pop-fade__XIbtt .25s cubic-bezier(.175, .885, .32, 1.275) 1 forwards;
-  animation: App_pop-fade__XIbtt .25s cubic-bezier(.175, .885, .32, 1.275) 1 forwards;
   background-color: var(--darkest);
   border-radius: var(--round-border-radius);
   display: flex;

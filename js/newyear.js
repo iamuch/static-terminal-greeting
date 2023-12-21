@@ -127,8 +127,8 @@ $(document).ready(function() {
 	var currentDate = new Date();
 	// var futureDate  = new Date(currentDate.getFullYear() + 1, 0, 1);
 	// var futureDate  = new Date(2023, 11, 22, 18, 30);
-	var futureDate  = new Date(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate(), currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds() + 5);
-	var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+	// var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+	var diff = 5;
 	
 	clock = $clock.FlipClock(diff, {
 		clockFace: 'DailyCounter',
